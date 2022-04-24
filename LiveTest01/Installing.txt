@@ -1,0 +1,3 @@
+﻿1.Build the sulotion
+2.cd LiveTestDomain
+3.dotnet ef database update

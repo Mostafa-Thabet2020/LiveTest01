@@ -14,6 +14,7 @@ namespace LiveTestDomain
         public string SecoundName { get; set; }
         public string Mobile { get; set; }
         public string Address { get; set; }
+        public double Salary { get; set; }
         public int DepartmentId { get; set; }
         [ForeignKey("DepartmentId")]
         public Department department { get; set; }

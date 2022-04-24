@@ -57,11 +57,11 @@ namespace LiveTestDomain
         {
             return new List<Empolyee>()
             {
-                new Empolyee(){FirstName="Ahmed",SecoundName="Thabet",DepartmentId=HRId,Mobile="01558488488",Address=""},
-                new Empolyee(){FirstName="Ali",SecoundName="Mohamed",DepartmentId=HRId,Mobile="01558488489",Address=""},
-                new Empolyee(){FirstName="Salma",SecoundName="AbdAllah",DepartmentId=PRID,Mobile="01558488490",Address=""},
-                new Empolyee(){FirstName="Shady",SecoundName="Yasser",DepartmentId=DevId,Mobile="01558488499",Address=""},
-                new Empolyee(){FirstName="Esraa",SecoundName="Said",DepartmentId=DevId,Mobile="01558488470",Address=""},
+                new Empolyee(){FirstName="Ahmed",SecoundName="Thabet",DepartmentId=HRId,Mobile="01558488488",Address="",Salary=5000},
+                new Empolyee(){FirstName="Ali",SecoundName="Mohamed",DepartmentId=HRId,Mobile="01558488489",Address="",Salary=8000},
+                new Empolyee(){FirstName="Salma",SecoundName="AbdAllah",DepartmentId=PRID,Mobile="01558488490",Address="",Salary=3000},
+                new Empolyee(){FirstName="Shady",SecoundName="Yasser",DepartmentId=DevId,Mobile="01558488499",Address="",Salary=10000},
+                new Empolyee(){FirstName="Esraa",SecoundName="Said",DepartmentId=DevId,Mobile="01558488470",Address="",Salary=4000},
             };
         }
     }

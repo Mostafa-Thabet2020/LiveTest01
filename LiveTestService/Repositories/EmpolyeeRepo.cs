@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LiveTestService.Repositories
+namespace LiveTestService.Repositories 
 {
-    public interface EmpolyeeRepo
+    public interface EmpolyeeRepo : IGenericCRUD<Empolyee> 
     {
         /// <summary>
         /// Add new empolyee

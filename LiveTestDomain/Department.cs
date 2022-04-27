@@ -10,6 +10,7 @@ namespace LiveTestDomain
     public class Department:BaseEntity
     {
         public string Name { get; set; }
+        public int Id { get; set; }
         public List<Empolyee> empolyees { get; set; }
     }
 }

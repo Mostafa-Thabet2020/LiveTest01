@@ -8,13 +8,14 @@ using System.Threading.Tasks;
 using LiveTestService;
 using Microsoft.EntityFrameworkCore;
 
+
 namespace LiveTestService.Service
 {
     public class EmpolyeeService : EmpolyeeRepo
     {
         public void Add(Empolyee empolyee)
         {
-            entity.CreatedDate=DateTime.Now;
+            empolyee.CreatedDate=DateTime.Now;
             DbContext.empolyees.Add(entity);
             dbContext.SaveChanges();
         }
@@ -41,7 +42,7 @@ namespace LiveTestService.Service
 
         public bool IsExist(int Id)
         {
-            return dbContext.mobiles.Any(x => x.Id==Id);
+            return dbContext.empolyees.Any(x => x.Id==Id);
         }
 
         public double TotalSalaries()

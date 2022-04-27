@@ -8,6 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\LiveTestDomain\LiveTestDomain.csproj" />
     <ProjectReference Include="..\LiveTestService\LiveTestService.csproj" />
   </ItemGroup>
 

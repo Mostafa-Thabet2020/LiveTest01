@@ -1,6 +1,7 @@
 ﻿using LiveTestDomain;
 using LiveTestDomain.Infrastructure;
 using LiveTestService;
+using LiveTestService.Service;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -16,37 +17,40 @@ namespace LiveTest01.ConsoleService
         {
             for (; ; )
             {
+                DepartmentService departmentService = new DepartmentService();
+
+                Department department = new Department();
+
                 Console.WriteLine($"Choose action\n" +
                     $"\nfor add enter 1" +
-                    $"\nfor  update enter 2" +
-                    $"\nfor get  by id enter 3");
+                    $"\nfor update enter 2" +
+                    $"\nfor Get all departments order by name enter 3" +
+                    $"\nfor get department by id enter 4");
                 int ActionNumber = Convert.ToInt32(Console.ReadLine());
                 switch (ActionNumber)
                 {
                     case 1:
-                        Department department = new Department();
                         Console.WriteLine("write department name:");
                         department.Name = Console.ReadLine();
-                        dbContext.departments.Add(department);
-                        dbContext.SaveChanges();
+                        departmentService.Add(department);
                         break;
 
                     case 2:
                         Console.WriteLine("write department id");
-                        int UpdatedDepartmentId = Convert.ToInt32(Console.ReadLine());
-                        Department UpdatedDepartment = dbContext.departments.Where(x => x.Id == UpdatedDepartmentId).SingleOrDefault();
-                        Console.WriteLine("enter new name:");
-                        UpdatedDepartment.Name = Console.ReadLine();
-                        dbContext.departments.Update(UpdatedDepartment);
-                        dbContext.SaveChanges();
+                        Convert.ToInt32(Console.ReadLine());
+                        departmentService.Update(department);
                         break;
 
                     case 3:
+                        Console.WriteLine("write department name");
+                        int DepartmentName = Convert.ToInt32(Console.ReadLine());
+                        departmentService.Count(DepartmentName);
+                        break;
+
+                    case 4:
                         Console.WriteLine("write department id");
                         int DepartmentId = Convert.ToInt32(Console.ReadLine());
-                        Department GetDepartment = dbContext.departments.ToList(DepartmentId);
-                        dbContext.departments.Get(GetDepartment);
-                        dbContext.SaveChanges();
+                        departmentService.Get(DepartmentId);
                         break;
 
                     default:

@@ -30,9 +30,10 @@ namespace LiveTestService.Service
                 dbContext.SaveChanges();
             }
         }
-        public int Count()
+        public int Count(int departmentName)
         {
-            throw new NotImplementedException();
+            List<Department> departments = new List<Department>();
+            return departments.Count();
         }
 
         public List<Department> Get()
@@ -53,11 +54,15 @@ namespace LiveTestService.Service
         {
             return dbContext.departments.Any(x => x.Id == id);
         }
+
         public bool IsExist(string departmentsName)
         {
             return dbContext.departments.Any(x => x.Name == departmentsName);
         }
 
-        
+        public int Count()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
